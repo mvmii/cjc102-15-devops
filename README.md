@@ -1,4 +1,4 @@
-# 🚀 CJC102-5th: GitHub & AWS 自動化部署實作
+# 🚀GitHub & AWS 自動化部署實作
 
 ## 📝 專案簡介
 本專案實作了將地端 Python Flask 應用程式透過 GitHub 自動部署至 AWS 環境的完整流程。利用 Docker 容器化技術，配合 AWS CodeBuild 與 ECR 進行映像檔建置，最後部署於 EC2 執行環境。
