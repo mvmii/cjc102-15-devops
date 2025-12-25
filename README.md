@@ -22,18 +22,29 @@
 
 ---
 
-## 📖 教學步驟
+## 步驟
 
 ### 第一步：準備 AWS 基礎設施
-#### 1. 建立 ECR 儲存庫
-- 前往 AWS Console > ECR。
-- 建立一個 Private 儲存庫，名稱自訂 (例如：`flask-app-repo`)。
-
-#### 2. 建立 EC2 執行環境
+#### 1. 建立 EC2 執行環境
 - 啟動一台 Linux EC2 (建議使用 Amazon Linux 2023)。
-- 安裝 Docker 並啟動服務：
+- 網路配置: 開啟 22 與 80 port
+- 
   ```bash
   sudo yum update -y
   sudo yum install -y docker
-  sudo service docker start
-  sudo usermod -a -G docker ec2-user
+
+  systemctl start docker
+  systemctl enable docker
+  usermod -a -G docker ec2-user
+  mkdir -p /home/ec2-user/.docker/cli-plugins
+  curl -SL https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-linux-x86_64 -o /home/ec2-user/.docker/cli-plugins/docker-compose
+  chmod +x /home/ec2-user/.docker/cli-plugins/docker-compose
+
+  chown -R ec2-user:ec2-user /home/ec2-user/.docker/
+
+  yum install -y git
+
+
+
+
+#### 2. 
