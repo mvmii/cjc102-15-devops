@@ -1,5 +1,5 @@
 """
-flask 第一版
+flask 
 """
 
 from flask import Flask, request, abort
@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET'])
 def hello_world():
-    return 'This is version 6.0'
+    return 'This is version 6.1'
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000)
